@@ -14,18 +14,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
-const authRoutes_1 = __importDefault(require("./routes/authRoutes"));
+const typeorm_1 = require("typeorm");
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 const rabbitMQ_1 = __importDefault(require("./utils/rabbitMQ"));
 const dotenv_1 = __importDefault(require("dotenv"));
-const logger_1 = __importDefault(require("./utils/logger"));
+require("reflect-metadata");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use(body_parser_1.default.json());
-app.use('/auth', authRoutes_1.default);
+app.use('/users', userRoutes_1.default);
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
-    yield rabbitMQ_1.default.connect().then((res) => logger_1.default.info(`Connected to RabbitMQ`));
-    app.listen(process.env.PORT, () => {
-        logger_1.default.info(`service running on port ${process.env.PORT}`);
-    });
+    try {
+        yield (0, typeorm_1.createConnection)(); // Инициализация TypeORM
+        console.log('Database connected successfully');
+        yield rabbitMQ_1.default.connect(); // Подключение к RabbitMQ
+        console.log('Connected to RabbitMQ successfully');
+        const port = process.env.PORT;
+        app.listen(port, () => {
+            console.log(`Server is running on port ${port}`);
+        });
+    }
+    catch (error) {
+        console.error('Error during service initialization:', error);
+    }
 });
 start();

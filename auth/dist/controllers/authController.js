@@ -14,13 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.login = exports.register = void 0;
 const authService_1 = __importDefault(require("../services/authService"));
-const rabbitMQ_1 = __importDefault(require("../utils/rabbitMQ"));
+const logger_1 = __importDefault(require("../utils/logger"));
 const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, password } = req.body;
+    const { username, email, password } = req.body;
     try {
-        const user = yield authService_1.default.register(username, password);
-        yield rabbitMQ_1.default.publish('user.registered', user);
-        res.status(201).json({ message: 'User registered successfully' });
+        const token = yield authService_1.default.register(username, email, password);
+        res.status(201).json({ token });
     }
     catch (err) {
         const message = err.message;
@@ -29,9 +28,10 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 exports.register = register;
 const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
+    logger_1.default.debug(`email = ${email}, password = ${password}`);
     try {
-        const token = yield authService_1.default.login(username, password);
+        const token = yield authService_1.default.login(email, password);
         res.status(200).json({ token });
     }
     catch (err) {

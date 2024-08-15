@@ -1,0 +1,179 @@
+2024-08-15T16:48:01.637Z [32minfo[39m: [ Auth ] service running on port 50001
+2024-08-15T16:49:35.271Z [32minfo[39m: 
+2024-08-15T16:50:45.624Z [32minfo[39m: [ Auth ] service running on port 50001
+2024-08-15T16:55:18.419Z [32minfo[39m: [ Auth ] service running on port 50001
+2024-08-15T16:57:44.552Z [ Auth ] [32minfo[39m: [ Auth ] service running on port 50001
+2024-08-15T16:59:31.457Z [ Auth ] [32minfo[39m: [ Auth ] service running on port 50001
+2024-08-15T17:19:17.772Z [ Auth ] [31merror[39m: [ Auth ] service running on port 50001
+2024-08-15T17:20:59.094Z [ Auth ] [31merror[39m: service running on port 50001
+2024-08-15T17:22:21.358Z [ Auth ] [31merror[39m: service running on port 50001
+2024-08-15T17:23:23.907Z [ Auth ] [33mwarn[39m: service running on port 50001
+2024-08-15T17:29:57.595Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:29:57.602Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:29:57.612Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:30:34.797Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:30:34.803Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:30:34.812Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:30:34.815Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:30:59.284Z Logger [ Auth ] [34mdebug[39m: req.body = [object Object]
+2024-08-15T17:31:46.279Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:31:46.285Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:31:46.293Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:31:46.295Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:33:30.388Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:33:30.394Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:33:30.404Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:33:30.407Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:33:54.097Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:35:06.462Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:35:06.469Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:35:06.479Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:35:06.481Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:35:14.375Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:35:14.377Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = null, userDataByEmail = null
+2024-08-15T17:36:19.552Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:36:19.559Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:36:19.569Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:36:19.571Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:36:24.393Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T17:36:32.349Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:36:32.350Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:36:32.352Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = null, userDataByEmail = null
+2024-08-15T17:37:12.719Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:37:12.725Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:37:12.734Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:37:12.736Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:37:18.245Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T17:37:23.859Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:37:23.860Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T17:37:23.862Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = null, userDataByEmail = null
+2024-08-15T17:53:08.194Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:53:08.200Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:53:08.208Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:53:08.210Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:53:22.631Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T17:53:22.638Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T17:53:22.648Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T17:53:22.651Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T17:53:32.916Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T17:53:39.017Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T17:53:39.018Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller@gmail.com, password = antananarivy
+2024-08-15T17:53:39.020Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = antananarivy, userDataByEmail = antananarivy
+2024-08-15T18:01:33.913Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:01:33.919Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:01:33.929Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:01:33.932Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:02:27.451Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:02:27.457Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:02:27.465Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:02:27.468Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:02:37.241Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:02:37.241Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:02:37.244Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = null, userDataByEmail = null
+2024-08-15T18:03:00.612Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:09:29.033Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:09:29.039Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:09:29.049Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:09:29.051Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:09:41.953Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:09:57.408Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:09:57.408Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:09:57.410Z Logger [ Auth ] [34mdebug[39m: userDataByUsername = null, userDataByEmail = null
+2024-08-15T18:14:06.579Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:14:06.587Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:14:06.597Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:14:06.600Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:14:12.809Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:14:15.930Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:14:15.930Z Logger [ Auth ] [34mdebug[39m: email = vartaller, password = antananarivy
+2024-08-15T18:15:25.432Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:15:25.438Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:15:25.447Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:15:25.450Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:15:38.053Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:15:40.462Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:15:40.462Z Logger [ Auth ] [34mdebug[39m: email = vartaller, password = antananarivy
+2024-08-15T18:17:09.162Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:17:09.169Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:17:09.178Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:17:09.180Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:17:48.697Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:17:48.704Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:17:48.712Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:17:48.714Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:17:52.051Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:17:52.051Z Logger [ Auth ] [34mdebug[39m: email = vartaller, password = antananarivy
+2024-08-15T18:17:52.052Z Logger [ Auth ] [34mdebug[39m: userData = null
+2024-08-15T18:18:43.156Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:18:43.162Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:18:43.171Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:18:43.173Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:18:47.888Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:18:47.888Z Logger [ Auth ] [34mdebug[39m: email = vartaller, password = antananarivy
+2024-08-15T18:18:47.890Z Logger [ Auth ] [34mdebug[39m: userData = null
+2024-08-15T18:19:17.028Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:19:17.034Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:19:17.044Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:19:17.046Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:19:20.054Z Logger [ Auth ] [34mdebug[39m: usernameOrEmail = vartaller, password = antananarivy
+2024-08-15T18:19:20.054Z Logger [ Auth ] [34mdebug[39m: email = vartaller, password = antananarivy, userKey = user:vartaller
+2024-08-15T18:19:20.056Z Logger [ Auth ] [34mdebug[39m: userData = null
+2024-08-15T18:20:01.103Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:20:01.110Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:20:01.119Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:20:01.121Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:20:03.590Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:20:03.590Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:20:36.256Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:20:36.262Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:20:36.272Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:20:36.275Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:20:38.467Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:20:38.468Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:20:38.470Z Logger [ Auth ] [34mdebug[39m: userData = null
+2024-08-15T18:21:33.222Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:21:33.228Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:21:33.238Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:21:33.240Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:21:47.400Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:27:04.902Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:27:04.910Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:27:04.918Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:27:04.921Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:27:46.033Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:28:27.829Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:28:27.836Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:28:27.849Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:28:27.852Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:29:18.145Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:29:38.694Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:29:38.694Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:29:38.697Z Logger [ Auth ] [34mdebug[39m: userId = null
+2024-08-15T18:31:11.962Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:31:11.968Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:31:11.977Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:31:11.979Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:31:25.766Z Logger [ Auth ] [32minfo[39m: User registered successfully
+2024-08-15T18:32:04.087Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:32:04.088Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:32:04.091Z Logger [ Auth ] [34mdebug[39m: userId = null, username = null, userPass = null
+2024-08-15T18:34:55.714Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:34:55.721Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:34:55.730Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:34:55.732Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:35:01.325Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:35:01.325Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:35:01.329Z Logger [ Auth ] [34mdebug[39m: user = [object Object]
+2024-08-15T18:35:44.718Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:35:44.724Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:35:44.733Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:35:44.736Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:35:48.186Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:35:48.187Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com
+2024-08-15T18:35:48.190Z Logger [ Auth ] [34mdebug[39m: userId = dfd43e9a, username = vartaller, userPass = $2a$10$YkfWtGpnnE4deUOwYw0szu5nvEdtVlTQJ.7nyFORmAxQRhYEWIIbW
+2024-08-15T18:36:55.726Z Logger [ Auth ] [32minfo[39m: Connected to Redis
+2024-08-15T18:36:55.732Z Logger [ Auth ] [32minfo[39m: Redis Ping Response: PONG
+2024-08-15T18:36:55.743Z Logger [ Auth ] [32minfo[39m: Connected to RabbitMQ
+2024-08-15T18:36:55.745Z Logger [ Auth ] [32minfo[39m: service running on port 50001
+2024-08-15T18:36:59.627Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy
+2024-08-15T18:36:59.628Z Logger [ Auth ] [34mdebug[39m: email = vartaller@gmail.com, password = antananarivy, userKey = user:vartaller@gmail.com

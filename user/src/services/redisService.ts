@@ -8,6 +8,7 @@ class RedisService {
 
     constructor() {
         this.client = redis;
+
         checkRedisConnection();
     }
 
@@ -25,22 +26,6 @@ class RedisService {
 
     async del(key: string): Promise<number> {
         return await this.client.del(key);
-    }
-
-    async hset(key: string, ...fieldsAndValues: string[]): Promise<number> {
-        return await this.client.hset(key, ...fieldsAndValues);
-    }
-
-    async hget(key: string, field: string): Promise<string | null> {
-        return await this.client.hget(key, field)
-    }
-
-    async sadd(key: string, ...members: string[]): Promise<number> {
-        return await this.client.sadd(key, ...members);
-    }
-
-    async hgetall(key: string): Promise<any> {
-        return await this.client.hgetall(key);
     }
 }
 

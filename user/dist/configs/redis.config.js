@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.redis = void 0;
 exports.checkRedisConnection = checkRedisConnection;
 const ioredis_1 = __importDefault(require("ioredis"));
-const logger_1 = __importDefault(require("../utils/logger"));
+// Create a configuration object for Redis
 const redisConfig = {
     port: 6379, // Redis port
     host: "127.0.0.1", // Redis host
@@ -23,21 +23,25 @@ const redisConfig = {
     password: "g1dfRE4dOt", // your password
     db: 0 // default DB
 };
+// Initialize Redis client with configuration
 exports.redis = new ioredis_1.default(redisConfig);
+// Event listener for errors
 exports.redis.on('error', (err) => {
-    logger_1.default.error(`Redis connection error: ${err}`);
+    console.error('Redis connection error:', err);
 });
+// Event listener for successful connection
 exports.redis.on('connect', () => {
-    logger_1.default.info(`Connected to Redis`);
+    console.log('Connected to Redis');
 });
+// Optionally: Function to demonstrate Redis usage
 function checkRedisConnection() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const response = yield exports.redis.ping();
-            logger_1.default.info(`Redis Ping Response: ${response}`);
+            console.log('Redis Ping Response:', response);
         }
         catch (err) {
-            logger_1.default.error(`Error pinging Redis: ${err}`);
+            console.error('Error pinging Redis:', err);
         }
     });
 }

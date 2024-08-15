@@ -36,25 +36,5 @@ class RedisService {
             return yield this.client.del(key);
         });
     }
-    hset(key, ...fieldsAndValues) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.client.hset(key, ...fieldsAndValues);
-        });
-    }
-    hget(key, field) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.client.hget(key, field);
-        });
-    }
-    sadd(key, ...members) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.client.sadd(key, ...members);
-        });
-    }
-    hgetall(key) {
-        return __awaiter(this, void 0, void 0, function* () {
-            return yield this.client.hgetall(key);
-        });
-    }
 }
 exports.default = new RedisService();
