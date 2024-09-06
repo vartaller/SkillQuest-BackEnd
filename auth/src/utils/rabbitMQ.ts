@@ -1,4 +1,5 @@
 import * as amqp from 'amqplib';
+import {UserLoggedDto, UserRegisteredDto} from "../dto/user.dto";
 
 class RabbitMQ {
     private connection: amqp.Connection;
@@ -9,7 +10,7 @@ class RabbitMQ {
         this.channel = await this.connection.createChannel();
     }
 
-    async publish(queue: string, message: any) {
+    async publish(queue: string, message: UserLoggedDto) {
         await this.channel.assertQueue(queue, { durable: true });
         this.channel.sendToQueue(queue, Buffer.from(JSON.stringify(message)));
     }

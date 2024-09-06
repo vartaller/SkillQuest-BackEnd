@@ -1,4 +1,3 @@
-import RedisInst from 'ioredis';
 import * as Redis from 'ioredis';
 import {redis} from "../configs/redis.config";
 import {checkRedisConnection} from "../configs/redis.config";

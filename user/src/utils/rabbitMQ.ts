@@ -19,12 +19,11 @@ class RabbitMQ {
         this.channel.sendToQueue(queue, Buffer.from(message));
     }
 
-    async receiveFromQueue(queue: string, callback: (msg: string) => void) {
-        await this.channel.assertQueue(queue, { durable: false });
+    async receiveFromQueue(queue: string, callback: (msg:  amqp.ConsumeMessage | null) => void) {
         await this.channel.consume(queue, message => {
             if (message !== null) {
                 console.log('Received:', message.content.toString());
-                callback(message.content.toString());
+                callback(message);
                 this.channel.ack(message);
             }
         });

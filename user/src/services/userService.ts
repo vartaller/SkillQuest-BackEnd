@@ -1,37 +1,73 @@
-import RedisService from './redisService';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import {v4 as uuidv4} from 'uuid';
 import {User} from "../entities/user";
-import AppDataSource from "../orm.config";
+import {Repository} from "typeorm";
+import {UserRegisteredDto} from "../dto/user.dto";
+import logger from "../utils/logger";
 
 class UserService {
-    private userRepository = AppDataSource.getRepository(User);
+    private userRepository: Repository<User>
 
-    async addUser(email: string, hashedPassword: string) {
+    constructor(userRepository: Repository<User>) {
+        this.userRepository = userRepository;
+    }
 
-        const user = this.userRepository.create({email: email, password: hashedPassword});
-        await this.userRepository.save(user);
-        await RedisService.set(`${email}:${hashedPassword}`, JSON.stringify(user));
+    async createUser(user: UserRegisteredDto) {
+        const hashedPassword = await bcrypt.hash(user.hashedPassword, 10);
+        const userId = uuidv4();
 
-        return user;
+        const userRegistered: User = {
+            id: userId,
+            username: user.username,
+            email: user.email,
+            password: hashedPassword,
+        };
+
+        return await this.userRepository
+            .createQueryBuilder()
+            .insert()
+            .into(User)
+            .values([userRegistered])
+            .execute()
+    }
+
+    async getUserById(id: string) {
+
+        return await this.userRepository
+            .createQueryBuilder()
+            .select("user")
+            .from(User, "user")
+            .where("user.id = :id", {id: id})
+            .getOne()
+    }
+
+    async updateUser(user: User) {
+
+        await this.userRepository
+            .createQueryBuilder()
+            .update(User)
+            .set(user)
+            .where("id = :id", {id: user.id})
+            .execute();
+
+        return user
+    }
+
+    async deleteUserById(id: string) {
+
+        return await this.userRepository
+            .createQueryBuilder()
+            .delete()
+            .from(User)
+            .where("id = :id", {id: id})
+            .execute()
     }
 
     async getAllUsers() {
 
-        const users = await this.userRepository.find();
-        return users;
-    }
-
-    async getUserById(id: number) {
-
-        const user = await this.userRepository.findOne({where: {id: id}});
-        return user;
-    }
-
-    async getUserByEmail(email: string) {
-
-        await RedisService.get(`${email}:${hashedPassword}`, JSON.stringify(user));
-        const user = await this.userRepository.findOne({where: {email: email}});
-        return user;
+        return await this.userRepository.find();
     }
 }
 
-export default new UserService();
+export default UserService;
