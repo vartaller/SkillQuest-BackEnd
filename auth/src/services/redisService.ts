@@ -42,6 +42,14 @@ class RedisService {
     async hgetall(key: string): Promise<any> {
         return await this.client.hgetall(key);
     }
+
+    async smembers(key: string): Promise<any> {
+        return await this.client.smembers(key);
+    }
+
+    async srem(key: string): Promise<any> {
+        return await this.client.srem(key);
+    }
 }
 
 export default new RedisService();

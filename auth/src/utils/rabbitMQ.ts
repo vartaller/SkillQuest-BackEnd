@@ -10,14 +10,23 @@ class RabbitMQ {
         this.channel = await this.connection.createChannel();
     }
 
+    async createQueue(queue: string) {
+        await this.channel.assertQueue(queue, { durable: true });
+    }
+
     async publish(queue: string, message: UserLoggedDto) {
         await this.channel.assertQueue(queue, { durable: true });
         this.channel.sendToQueue(queue, Buffer.from(JSON.stringify(message)));
     }
 
-    async consume(queue: string, callback: (msg: amqp.ConsumeMessage | null) => void) {
-        await this.channel.assertQueue(queue, { durable: true });
-        await this.channel.consume(queue, callback, {noAck: true});
+    async receiveFromQueue(queue: string, callback: (msg:  amqp.ConsumeMessage | null) => void) {
+        await this.channel.consume(queue, message => {
+            if (message !== null) {
+                console.log('Received:', message.content.toString());
+                callback(message);
+                this.channel.ack(message);
+            }
+        });
     }
 }
 

@@ -4,6 +4,8 @@ import jwt from "jsonwebtoken";
 import {HTTP_STATUS_CODES} from '../constants/httpStatusCodes';
 import logger from "../utils/logger";
 import {UserRegisteredDto} from "../dto/user.dto";
+import RabbitMQ from "../utils/rabbitMQ";
+import {MessageEventTypes} from "../types/messageEventTypes";
 
 class UserController {
     userService: UserService;
@@ -14,19 +16,7 @@ class UserController {
     }
 
     async createUser(user: UserRegisteredDto) {
-        // logger.debug(`req.body = ${JSON.stringify(req.body)}`)
         await this.userService.createUser(user);
-        // try {
-        //
-        //     await this.userService.createUser(req.body);
-        //     return res.status(HTTP_STATUS_CODES.OK);
-        //
-        // } catch (error) {
-        //
-        //     logger.debug(`controller error: ${error}`)
-        //     return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR);
-        //
-        // }
     }
 
     async getUserById(req: Request, res: Response) {
@@ -63,6 +53,7 @@ class UserController {
 
         try {
             await this.userService.deleteUserById(String(req.params.id));
+            await RabbitMQ.sendToQueue(MessageEventTypes.UserDeleted, MessageEventTypes.UserDeleted)
             return res.status(HTTP_STATUS_CODES.NO_CONTENT).send();
         } catch (error) {
             return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).send(error);
@@ -72,11 +63,11 @@ class UserController {
     async getAllUsers(req: Request, res: Response) {
         logger.debug(`getAllUsers`);
         const status = await this.verifyUser(req)
-        if (status != HTTP_STATUS_CODES.OK) return res.status(status)
+        if (status != HTTP_STATUS_CODES.OK) return res.status(status).send()
 
         try {
             const users = await this.userService.getAllUsers();
-            return res.json(users);
+            return res.json(users).send();
         } catch (error) {
             return res.status(HTTP_STATUS_CODES.INTERNAL_SERVER_ERROR).send(error);
         }

@@ -6,6 +6,7 @@ import RabbitMQ from "../utils/rabbitMQ";
 import {MessageEventTypes} from "../types/messageEventTypes";
 import {UserLoggedDto, UserRegisteredDto} from "../dto/user.dto";
 import logger from "../utils/logger";
+import {HTTP_STATUS_CODES} from "../constants/httpStatusCodes";
 
 class AuthService {
     async register(username: string, email: string, password: string) {
@@ -63,7 +64,23 @@ class AuthService {
         await RabbitMQ.publish(MessageEventTypes.UserLogged, userLogged);
         logger.info(`User logged successfully`)
 
-        return token;
+        return {userId: user.id, token: token};
+    }
+
+    async delete(userId: String) {
+        const userKey = await RedisService.smembers(`index:id:${userId}`);
+
+        if (userKey.length > 0) {
+            await RedisService.del(userKey[0]);
+
+            await RedisService.srem(`index:id:${userId}`);
+
+            const email = await RedisService.hget(userKey[0], 'email');
+
+            await RedisService.srem(`index:email:${email}`);
+        }
+
+        return HTTP_STATUS_CODES.NO_CONTENT
     }
 }
 

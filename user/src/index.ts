@@ -18,8 +18,7 @@ app.use('/user', userRouters);
 
 const start = async () => {
     try {
-        await RabbitMQ.connect();
-        logger.info('Connected to RabbitMQ successfully');
+        await RabbitMQ.connect().then(() => logger.info('Connected to RabbitMQ successfully'));
 
         RabbitMQ.receiveFromQueue(
             MessageEventTypes.UserLogged, (msg) =>
@@ -41,9 +40,16 @@ const start = async () => {
             }
         ).catch(error => logger.error(`Error in receiving UserRegistered message: ${error}`))
 
-        const port = process.env.PORT;
-        app.listen(port, () => {
-            logger.info(`service running on port ${process.env.PORT}`);
+        const server = app.listen(process.env.PORT, () => {
+            logger.info(`App started on PORT: ${process.env.PORT}`);
+        });
+
+        server.on('error', (err: any) => {
+            if (err.code === 'EADDRINUSE') {
+                logger.warning(`PORT: ${process.env.PORT} already in use`);
+            } else {
+                logger.error(`Error starting server: ${err.message}`);
+            }
         });
     } catch (error) {
         logger.error(`Error during service initialization: ${error}`);
