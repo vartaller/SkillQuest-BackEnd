@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Character {
+  id                 Int              @id @default(autoincrement())
+  name               String
+  level              Int              @default(0)
+  currentExperience  Int              @default(0)
+  userId             String
+  passiveEffects     PassiveEffect[]
+  activeEffects      ActiveEffect[]
+  skills             Skill[]
+  createdAt DateTime                  @default(now())
+  updatedAt DateTime                  @updatedAt
+
+  @@map("сharacter")
+}
+
+model PassiveEffect {
+  id        Int      @id @default(autoincrement())
+  name      String
+  skills    Skill[]
+  value     Float
+  isActive  Boolean
+  character Character @relation(fields: [characterId], references: [id])
+  characterId Int
+}
+
+model ActiveEffect {
+  id        Int      @id @default(autoincrement())
+  name      String
+  skills    Skill[]
+  value     Float
+  isActive  Boolean
+  character Character @relation(fields: [characterId], references: [id])
+  characterId Int
+}
+
+model Skill {
+  id                Int        @id @default(autoincrement())
+  name              String
+  stepType          Step       @relation(fields: [stepTypeId], references: [id])
+  stepTypeId        Int
+  currentStepValue  Int
+  level             Int
+  stepsToNextLevel  Int
+  passiveEffects    PassiveEffect[]
+  activeEffects     ActiveEffect[]
+  character         Character  @relation(fields: [characterId], references: [id])
+  characterId       Int
+}
+
+model Step {
+  id     Int     @id @default(autoincrement())
+  name   String
+  skills Skill[]
+}
+

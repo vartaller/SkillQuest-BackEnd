@@ -15,7 +15,7 @@ class UserService {
 
     async createUser(user: UserRegisteredDto) {
         const hashedPassword = await bcrypt.hash(user.hashedPassword, 10);
-        const userId = uuidv4();
+        const userId = user.id;
 
         const userRegistered: User = {
             id: userId,

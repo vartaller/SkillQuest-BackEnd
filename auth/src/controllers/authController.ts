@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import AuthService from '../services/authService';
 import logger from "../utils/logger";
 import {HTTP_STATUS_CODES} from "../constants/httpStatusCodes";
+import {ResponseDto} from "../dto/response.dto";
 
 export const register = async (req: Request, res: Response) => {
     const {username, email, password} = req.body;
@@ -21,9 +22,9 @@ export const login = async (req: Request, res: Response) => {
     logger.debug(`email = ${email}, password = ${password}`)
 
     try {
-        const token = await AuthService.login(email, password);
-        res.setHeader('Authorization', `Bearer ${token}`);
-        return res.status(HTTP_STATUS_CODES.OK).json({token});
+        const response: ResponseDto = await AuthService.login(email, password);
+        res.setHeader('Authorization', `Bearer ${response.token}`);
+        return res.status(HTTP_STATUS_CODES.OK).json({userId: response.userId});
     } catch (err) {
         const message = (err as Error).message;
         logger.error(`Login error: ${message}`);
